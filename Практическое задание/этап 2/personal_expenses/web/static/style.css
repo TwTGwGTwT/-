@@ -1,0 +1,22 @@
+body {
+	font-family: sans-serif;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+header nav a {
+	margin-right: 12px;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #ccc;
+	padding: 6px 10px;
+	text-align: left;
+}
+form label {
+	display: block;
+	margin-bottom: 8px;
+}
