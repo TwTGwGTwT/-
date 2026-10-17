@@ -1,0 +1,36 @@
+{{ define "content"}}
+<h2>Список трат</h2>
+{{if .Expenses}}
+<table>
+	<thead>
+		<tr>
+			<th>№</th>
+			<th>Сумма</th>
+			<th>Описание</th>
+			<th>Дата</th>
+			<th>Действия</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{ range .Expenses}}
+		<tr>
+			<td>{{.ID}}</td>
+			<td>{{ printf "%.2f" .Amount}}</td>
+			<td>{{.Description}}</td>
+			<td>{{.Date}}</td>
+			<td>
+				<a href="/expenses/{{.ID}}/edit">Редактировать</a>
+				<form method="POST" action="/expenses/{{.ID}}/delete"
+					  onsubmit="return confirm('Удалить эту трату?')"
+					  style="display:inline">
+					<button type="submit">Удалить</button>
+				</form>
+			</td>
+		</tr>
+		{{ end }}
+	</tbody>
+</table>
+{{ else }}
+<p>Трат пока нет. <a href="/expenses/add">Добавить первую</a></p>
+{{ end }}
+{{ end }}

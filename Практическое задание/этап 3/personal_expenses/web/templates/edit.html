@@ -1,0 +1,23 @@
+{{ define "content"}}
+<h2>Редактировать трату</h2>
+<form method="POST" action="/expenses/{{.ID}}/edit">
+	<label>
+		Сумма:
+		<input type="number" name="amount" step="0.01"
+			   value="{{ printf "%.2f" .Amount}}" required>
+	</label>
+	<br>
+	<label>
+		Описание:
+		<input type="text" name="description" value="{{.Description}}" required>
+	</label>
+	<br>
+	<label>
+		Дата:
+		<input type="date" name="date" value="{{.Date}}" required>
+	</label>
+	<br>
+	<button type="submit">Сохранить</button>
+	<a href="/expenses">Отмена</a>
+</form>
+{{ end }}
