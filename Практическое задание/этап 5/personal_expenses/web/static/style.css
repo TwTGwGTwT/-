@@ -1,0 +1,74 @@
+body {
+	font-family: sans-serif;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+header nav a {
+	margin-right: 12px;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #ccc;
+	padding: 6px 10px;
+	text-align: left;
+}
+form label {
+	display: block;
+	margin-bottom: 8px;
+}
+form label select,
+form label input[type="date"] {
+	margin-left: 6px;
+}
+.container {
+	padding: 15px;
+}
+.filter-form {
+	margin-bottom: 20px;
+}
+.filter-form label {
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+	margin-right: 10px;
+}
+.filter-form select,
+.filter-form input[type="date"] {
+	padding: 5px;
+}
+.filter-form button {
+	margin-left: 10px;
+}
+button {
+	padding: 8px 12px;
+	margin: 5px;
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+	color: #007bff;
+}
+a:hover {
+	text-decoration: underline;
+}
+.error {
+    color: #c0392b;
+    font-weight: bold;
+}
+.link-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+}
+.user {
+    margin-right: 12px;
+    color: #555;
+}

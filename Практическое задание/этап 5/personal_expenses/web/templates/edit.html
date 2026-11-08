@@ -1,0 +1,32 @@
+{{ define "content"}}
+<h2>Редактировать трату</h2>
+<form method="POST" action="/expenses/{{.Expense.ID}}/edit">
+	<label>
+		Сумма:
+		<input type="number" name="amount" step="0.01"
+			   value="{{ printf "%.2f" .Expense.Amount}}" required>
+	</label>
+	<br>
+	<label>
+		Описание:
+		<input type="text" name="description" value="{{.Expense.Description}}" required>
+	</label>
+	<br>
+	<label>
+		Дата:
+		<input type="date" name="date" value="{{.Expense.Date}}" required>
+	</label>
+	<br>
+	<label>
+		Категория:
+		<select name="category_id" required>
+			{{ range .Categories }}
+			<option value="{{.ID}}" {{ if eq .ID $.Expense.CategoryID }}selected{{ end }}>{{.Name}}</option>
+			{{ end }}
+		</select>
+	</label>
+	<br>
+	<button type="submit">Сохранить</button>
+	<a href="/expenses">Отмена</a>
+</form>
+{{ end }}
