@@ -1,0 +1,34 @@
+{{ define "content"}}
+<h2>Статистика</h2>
+
+<form id="stats-form">
+    <label>
+        С даты:
+        <input type="date" name="from">
+    </label>
+    <label>
+        По дату:
+        <input type="date" name="to">
+    </label>
+    <label>
+        Год:
+        <input type="number" name="year" min="2000" max="2100" step="1">
+    </label>
+    <button type="submit">Построить</button>
+    <button type="button" id="reset-btn">Сбросить</button>
+</form>
+
+<div class="charts">
+    <div class="chart-block">
+        <h3>По категориям</h3>
+        <canvas id="by-category-chart"></canvas>
+    </div>
+    <div class="chart-block">
+        <h3>По месяцам</h3>
+        <canvas id="by-month-chart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="/static/stats.js"></script>
+{{ end }}
