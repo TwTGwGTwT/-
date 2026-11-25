@@ -1,2 +1,0 @@
-.env
-expenses.db
